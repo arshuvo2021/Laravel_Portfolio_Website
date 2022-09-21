@@ -18,13 +18,17 @@
 
 
 </head>
-<body>
+<body class="fix-header fix-sidebar">
     
-
+@include('Layout.menu')
 
 
 @yield('content')
 
+
+
+</div>
+</div>
 
 
 <script type="text/javascript" src="{{asset('js/jquery-3.4.1.min.js')}}"></script>
