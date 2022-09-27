@@ -9,7 +9,7 @@ function getServicesData(){
    axios.get('/getServicesData')
   .then(function(response) {
     var jsonData=response.data;
-    console.log(jsonData);
+   // var jsonData=jsonData.data;
   $.each(jsonData,function(i, item){
     $('<tr>').html(
        '<td><img class="table-img" src='+jsonData[i].service_img+'></td>'+
