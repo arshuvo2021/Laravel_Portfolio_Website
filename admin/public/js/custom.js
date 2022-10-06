@@ -8,42 +8,39 @@ function getServicesData(){
 
    axios.get('/getServicesData')
   .then(function(response) {
+
+   if(response.status==200){
+
+   $('#MainDiv').removeClass('d-none');
+   $('#loaderDiv').addClass('d-none');
+
+
     var jsonData=response.data;
-   // var jsonData=jsonData.data;
-  $.each(jsonData,function(i, item){
-    $('<tr>').html(
-       '<td><img class="table-img" src='+jsonData[i].service_img+'></td>'+
-        '<td>'+ jsonData[i].service_name + '</td>'+
-        '<td>'+ jsonData[i].service_des + '</td>'+
-        '<td><a href=""><i class="fas fa-edit"> </i> </a> </td>'+
-        '<td><a href=""><i class="fas fa-trash-alt"> </i></a></td>'
-        ).appendTo('#service_table');
-   });
+     $.each(jsonData,function(i, item){
+       $('<tr>').html(
+          '<td><img class="table-img" src='+jsonData[i].service_img+'></td>'+
+           '<td>'+ jsonData[i].service_name + '</td>'+
+           '<td>'+ jsonData[i].service_des + '</td>'+
+           '<td><a href=""><i class="fas fa-edit"> </i> </a> </td>'+
+           '<td><a href=""><i class="fas fa-trash-alt"> </i></a></td>'
+           ).appendTo('#service_table');
+      });
+
+   }
+
+   else{
+      $('#loaderDiv').addClass('d-none');
+      $('#WrongDiv').removeClass('d-none');
+
+   }
+  
 
 }).catch(function(error) {
+     $('#loaderDiv').addClass('d-none');
+      $('#WrongDiv').removeClass('d-none');
+
 
 });
 
 }
 
-// function getServicesData(){
-
-//   axios.get('/getServicesData')
-//  .then((response)=> {
-//    var jsonData=response.data;
-//    console.log(jsonData);
-//    const Data=jsonData.map((ars)=>{
-//     '<td><img class="table-img" src='+ars.service_img+'></td>'+
-//        '<td>'+ ars.service_name + '</td>'+
-//        '<td>'+ars.service_des + '</td>'+
-//        '<td><a href=""><i class="fas fa-edit"></i></a> </td>'+
-//        '<td><a href=""><i class="fas fa-trash-alt"></i></a></td></tr>'
-       
-//    });
-
-//    $('<tr>').html(Data).append('#service_table');
-// }).catch(function(error) {
-
-// });
-
-// }
