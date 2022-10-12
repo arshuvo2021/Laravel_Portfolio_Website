@@ -29,7 +29,7 @@
 <div id="loaderDiv" class="container">
     <div class="row">
         <div class="col-md-12 m-5 text-center p-5">
-              <img class="loading-icon" src="{{asset('images/loader.svg')}}">
+            <img class="loading-icon" src="{{asset('images/loader.svg')}}">
         </div>
     </div>
 </div>
@@ -38,18 +38,38 @@
 <div id="WrongDiv" class="container d-none">
     <div class="row">
         <div class="col-md-12 text-center p-5">
-             <h1>Something went wrong!!</h1>
+            <h1>Something went wrong!!</h1>
+        </div>
     </div>
+
+</div>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body p-3 text-center">
+        <h5 class="mt-4">Do You Want To Delete?</h5>
+        <h5 id="serviceDeleteId" class="mt-4 d-none">   </h5>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-sm btn-primary" data-dismiss="modal">No</button>
+        <button  id="serviceDeleteConfirmBtn" type="button" class="btn  btn-sm  btn-danger">Yes</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-@endsection
+    @endsection
 
-@section('script')
 
-<script type="text/javascript">
-    getServicesData();
 
-</script>
+    @section('script')
 
-@endsection
+    <script type="text/javascript">
+        getServicesData();
+
+    </script>
+
+    @endsection
