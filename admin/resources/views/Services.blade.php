@@ -77,7 +77,7 @@
         </button>
       </div>
       <div class="modal-body p-4 text-center">
-          <h5 id="serviceEditId" class="mt-4 ">   </h5>
+          <h5 id="serviceEditId" class="mt-4 d-none ">   </h5>
           <div id="serviceEditForm" class="d-none w-100">
           <input id="serviceNameID" type="text" id="" class="form-control mb-4" placeholder="Service Name">
           <input id="serviceDesID" type="text" id="" class="form-control mb-4" placeholder="Service Description">
