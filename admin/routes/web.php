@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CoursesController;
+use App\Http\Controllers\ProjectController;
+
 
 http://localhost/admin/attributes/add-values;
 
@@ -23,7 +25,6 @@ Route::post('/ServiceUpdate',[ServiceController::class, 'ServiceUpdate']);
 Route::post('/ServiceAdd',[ServiceController::class, 'ServiceAdd']);
 
 
-
 // Admin Panel Courses manaement
 Route::get('/courses',[CoursesController::class, 'CoursesIndex']);
 Route::get('/getCoursesData',[CoursesController::class, 'getCoursesData']);
@@ -32,3 +33,13 @@ Route::post('/CoursesDetails',[CoursesController::class, 'getCoursesDetails']);
 Route::post('/CoursesUpdate',[CoursesController::class, 'CoursesUpdate']);
 Route::post('/CoursesAdd',[CoursesController::class, 'CoursesAdd']);
 
+
+
+// Admin Panel Projects Management
+
+Route::get('/Project',[ProjectController::class, 'ProjectIndex']);
+Route::get('/getProjectData',[ProjectController::class, 'getProjectData']);
+Route::post('/ProjectDetails',[ProjectController::class, 'getProjectDetails']);
+Route::post('/ProjectDelete',[ProjectController::class, 'ProjectDelete']);
+Route::post('/ProjectUpdate',[ProjectController::class, 'ProjectUpdate']);
+Route::post('/ProjectAdd',[ProjectController::class, 'ProjectAdd']);
