@@ -6,6 +6,10 @@ use App\Http\Controllers\VisitorController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\CoursesController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ReviewController;
+
+
 
 
 http://localhost/admin/attributes/add-values;
@@ -43,3 +47,19 @@ Route::post('/ProjectDetails',[ProjectController::class, 'getProjectDetails']);
 Route::post('/ProjectDelete',[ProjectController::class, 'ProjectDelete']);
 Route::post('/ProjectUpdate',[ProjectController::class, 'ProjectUpdate']);
 Route::post('/ProjectAdd',[ProjectController::class, 'ProjectAdd']);
+
+
+
+// Admin Panel Contact Management
+Route::get('/Contact',[ContactController::class, 'ContactIndex']);
+Route::get('/getContactData',[ContactController::class, 'getContactData']);
+Route::post('/ContactDelete',[ContactController::class, 'ContactDelete']);
+
+
+// Admin Panel Review Management
+Route::get('/Review',[ReviewController::class, 'ReviewIndex']);
+Route::get('/getReviewData',[ReviewController::class, 'getReviewData']);
+Route::post('/ReviewDetails',[ReviewController::class, 'getReviewDetails']);
+Route::post('/ReviewDelete',[ReviewController::class, 'ReviewDelete']);
+Route::post('/ReviewUpdate',[ReviewController::class, 'ReviewUpdate']);
+Route::post('/ReviewAdd',[ReviewController::class, 'ReviewAdd']);
