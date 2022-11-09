@@ -9,6 +9,9 @@ use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PhotoController;
+
+
 
 
 
@@ -59,7 +62,7 @@ Route::post('/ContactDelete',[ContactController::class, 'ContactDelete'])->middl
 
 // Admin Panel Review Management
 Route::get('/Review',[ReviewController::class, 'ReviewIndex'])->middleware('loginCheck');
-Route::get('/getReviewData',[ReviewController::class, 'getReviewData']);
+Route::get('/getReviewData',[ReviewController::class, 'getReviewData'])->middleware('loginCheck');
 Route::post('/ReviewDetails',[ReviewController::class, 'getReviewDetails'])->middleware('loginCheck');
 Route::post('/ReviewDelete',[ReviewController::class, 'ReviewDelete'])->middleware('loginCheck');
 Route::post('/ReviewUpdate',[ReviewController::class, 'ReviewUpdate'])->middleware('loginCheck');
@@ -71,3 +74,11 @@ Route::post('/ReviewAdd',[ReviewController::class, 'ReviewAdd'])->middleware('lo
 Route::get('/Login',[LoginController::class, 'LoginIndex']);
 Route::post('/onLogin',[LoginController::class, 'onLogin']);
 Route::get('/Logout',[LoginController::class, 'onLogout']);
+
+
+// Admin Photo Gallery
+Route::get('/Photo',[PhotoController::class, 'PhotoIndex'])->middleware('loginCheck');
+Route::post('/PhotoUpload',[PhotoController::class, 'PhotoUpload'])->middleware('loginCheck');
+Route::get('/PhotoJSON',[PhotoController::class, 'PhotoJSON'])->middleware('loginCheck');
+Route::get('/PhotoJSONByID/{id}',[PhotoController::class, 'PhotoJSONByID'])->middleware('loginCheck');
+Route::post('/PhotoDelete',[PhotoController::class, 'PhotoDelete'])->middleware('loginCheck');
